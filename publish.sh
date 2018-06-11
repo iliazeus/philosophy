@@ -8,6 +8,6 @@ git checkout gh-pages
 cp ${TRAVIS_BUILD_DIR}/*.html .
 
 git add -A
-git commit -m "Build gh-pages"
+git commit -m "Build gh-pages from:" -m "$(git log HEAD^.. --oneline)"
 git push https://${GH_OAUTH_TOKEN}@github.com/${GH_USER_NAME}/${GH_PROJECT_NAME} 2>&1
 
